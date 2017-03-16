@@ -85,7 +85,7 @@ class Contacto {
     // Funcion para confgurar y establecer todas las opciones para la transferencia de datos por curl
     private function ejecutar_curl($jsonArray, $curl, $type_metodo) {
         curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 
-                                                     'authorization: Basic ' . base64_encode('dmezquiam@gmail.com'. ':' .'2434f106c4b28491d527') 
+                                                     'authorization: Basic ' . base64_encode('usuario@dominio.com'. ':' .'token') 
                                                     )); 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); 
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
@@ -114,7 +114,7 @@ class Contacto {
         $output = curl_exec($curl);
         //print_r($output);
 
-        //nCerrar sesion cURL
+        //Cerrar sesion cURL
         curl_close($curl);
 
         if($output === false){
